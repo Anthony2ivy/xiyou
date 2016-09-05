@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //@EnableTransactionManagement
 @SpringBootApplication
 @ImportResource("applicationContext.xml")
-@EnableWebMvc
+//@EnableWebMvc
 public class hello {
     public static void main(String[] args) {
         //第一个简单的应用，
