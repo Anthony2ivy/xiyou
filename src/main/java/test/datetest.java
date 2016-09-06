@@ -1,5 +1,7 @@
 package test;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -17,7 +19,10 @@ public class datetest {
             e.printStackTrace();
         }
         Date now2=new Date();
-        now2.setYear(2015);
+        now2.setYear(115);
+        System.out.println(now2.getYear());
+        System.out.println(now.getYear());
         System.out.println(now.getTime()+"  "+now2.getTime());
+        System.out.println((now.getTime()-now2.getTime())/24/3600/1000);
     }
 }

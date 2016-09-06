@@ -1,5 +1,7 @@
 package authentication;
 
+import org.springframework.context.annotation.Bean;
+
 import java.util.*;
 
 /**
@@ -7,9 +9,11 @@ import java.util.*;
  */
 public class AccountAuthentic {
     private HashMap<String,AccountToken> tokenList;
-    public AccountAuthentic()
+    private int timeoutDay;
+    public AccountAuthentic(int timeoutDay)
     {
         this.tokenList=new HashMap<String,AccountToken>();
+        this.timeoutDay=timeoutDay;
     }
     public void addToken(String token,String id)
     {
@@ -24,14 +28,14 @@ public class AccountAuthentic {
             return null;
         }else
         {
-            accountToken.setCreateTime(new Date());
-            return accountToken.getStuId();
+            if(((new Date().getTime()-accountToken.getCreateTime().getTime())/24/3600/1000)>7)
+            {
+                tokenList.remove(token);
+                return null;
+            }else {
+                accountToken.setCreateTime(new Date());
+                return accountToken.getStuId();
+            }
         }
-    }
-    public static void main(String[] args) {
-        AccountAuthentic accountAuthentic=new AccountAuthentic();
-        accountAuthentic.addToken("asas","123");
-        System.out.println(accountAuthentic.checkToken("asas"));
-        System.out.println(accountAuthentic.checkToken("as"));
     }
 }
