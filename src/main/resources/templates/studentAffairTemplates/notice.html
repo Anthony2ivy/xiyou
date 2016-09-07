@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+				<div class="notice">
+					<div class="title">提醒</div>
+					<div class="subTitle">
+						<span ng-repeat="x in subtitles" class="subTitleContent">{{x}}</span>
+					</div>
+					<div class="noticeList">
+						<hr />
+						<form class="noticeForm">
+							<div class="listBanner">
+								<input type="checkbox" />全选
+								<div class="buttonDelete">删除</div>
+								<div class="buttonRead">已读</div>
+							</div>
+							<div class="checkboxContent" ng-repeat="x in name">
+								<input type="checkbox" />
+								<div class="contentDiv">
+									<div class="imgDiv">
+										<img src={{touxiang[$index]}}>
+									</div>
+									<div class="rightText">
+										<div class="nameDiv">
+											{{x}}
+										</div>
+										<div class="textDiv">
+											<span class="textTitle">
+												{{textTitle[$index]}}
+											</span>
+											{{texts[$index]}}
+										</div>
+									</div>
+								</div>
+								<div class="date">
+									{{dates[$index]}}
+								</div>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

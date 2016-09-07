@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="navAffair">
+			<div class="affairTitle">
+				个人事务一览
+			</div>
+			<div class="affairNum-1">
+				已完成数:{{affairNum}}
+			</div>
+			<div class="affairNum-2">
+				未完成数:{{affairNum}}
+			</div>
+			<div class="navAffairDetails">
+				<div ng-repeat="x in affairs" class="affairs-{{$index}}" mark={{$index}} ng-click="colorChange($event)">{{x}}</div>
+			</div>
+		</div>
+		<div class="affairContent" ng-include="getInclude()" ng-controller="affair">
+		</div>
+	</body>
+
+</html>

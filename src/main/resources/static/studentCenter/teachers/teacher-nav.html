@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<div class="tutor">
+			<div class="tutorTitle">
+				导师 - 学生双选系统
+			</div>
+			<div class="navTutor">
+				<div class="stepName" ng-repeat="x in stepName">
+					{{x}}
+					<div class="stepNumber-{{$index}}" mark={{$index}}>
+						{{stepNumber[$index]}}
+					</div>
+				</div>
+				<div class="fixedLine">
+				</div>
+				<div class="stepLine-{{$index}}" ng-repeat="x in stepName"></div>
+			</div>
+			<!--
+               下面部分是教师列表
+                -->
+		</div>
+	</body>
+</html>

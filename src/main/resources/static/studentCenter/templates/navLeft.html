@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="triangle">
+		</div>
+		<!--二级菜单
+            -->
+		<div class="hideDiv">
+			<div class="subItems" mark="{{$index}}" ng-repeat="y in subs">
+				<span class={{subIcons[$index]}}></span> &nbsp;{{y}}
+			</div>
+		</div>
+		<!--
+            	三级菜单
+            -->>
+		<div class="hideSubDive">
+			<div class="subSubItems" ng-repeat="z in subsubs" mark={{$index}}>{{z}}</div>
+		</div>
+		<div class="navLeft">
+			<div class="personIcons">
+				<img src="img/headerItems/headerProfile.svg" />
+			</div>
+			<div class="navList">
+				<div class="navItems" ng-repeat="x in navItems">
+					<br />
+					<li class={{navIcons[$index]}}></li>
+					{{x}}
+				</div>
+				<div class="navLabel">
+					<br />
+					<li class={{signIcons}}></li>
+					{{sign}}
+				</div>
+			</div>
+		</div>
+
+		<!--顶部
+            -->
+		<div class="topLine">
+			<div class="banner"></div>
+			<div class="forward">
+				<span class="ion-ios-arrow-left"></span>
+			</div>
+			<div class="back">
+				<span class="ion-ios-arrow-right"></span>
+			</div>
+			<div class="transparentLine"></div>
+			<div class="line"></div>
+		</div>
+	</body>
+
+</html>

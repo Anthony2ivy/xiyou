@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="teachers-2s">
+			<div class="teacherSelected">
+			<div class="title">已选择的志愿</div>
+			<div class="Selected" ng-repeat="x in selected">
+				第{{$index+1}}志愿:
+				<span class="name">{{x}}</span>
+				<span class="department">未知</span>
+				<span class="other">未知</span>
+			</div>
+		</div>
+		<div class="studentInfo">
+			<div class="stuInfo">学生自我简介:</div>
+			<div class="personalStatement"><textarea></textarea></div>
+			<div class="buttonGroup">
+				<div class="cancel">
+					取消
+				</div>
+				<div class="nextStep">
+					下一步
+				</div>
+			</div>
+		</div>
+
+		</div>
+		
+	</body>
+
+</html>

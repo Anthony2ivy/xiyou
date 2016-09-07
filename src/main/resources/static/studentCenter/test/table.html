@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<section ng-include="header.html">
+		</section>
+		<section class="applyForm">
+			<div class="partOne" ng-app="StuInfo" ng-controller="StuInfo">
+				<table class="StudentInfo">
+					<tr ng-repeat="x in InfoItems">
+						<td>{{x}}</td>
+					</tr>
+				</table>
+			</div>
+			<div class="partTwo">
+			</div>
+			<div class="partThree"></div>
+		</section>
+		<section ng-include="footer.html"></section>
+		<script type="text/javascript" src="js/StudentInfo.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</body>
+
+</html>

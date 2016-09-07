@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="navHelp">
+			<div class="navHelpLeft">
+				<div class="navHelpTitle">帮助</div>
+				<div class="navSwitch">
+					<div class="navHelpcol-1 pressColor" ng-click="colorPress($event)" mark="0">帮助中心</div>
+					<div class="navHelpcol-2" ng-click="colorPress($event)" mark="1">联系我们</div>
+				</div>
+			</div>
+			<div class="navHelpRight"></div>
+		</div>
+		<div class="helpContent" ng-include="getContent()"></div>
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/footer/footer.css" />
+		<script type="text/javascript" src="js/angular.min.js"></script>
+	</head>
+
+	<body>
+		<div ng-app="footer" ng-controller="footer" class="footerItems">
+			<div class="footerLogo">
+				<img src="img/footer/SUSTech Student Service.svg">
+			</div>
+			<table class="footerTable">
+				<tr>
+					<td ng-repeat="x in footerTitle">{{x}}</td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td ng-repeat="x in footerOne">{{x}}</td>
+				</tr>
+				<tr>
+					<td ng-repeat="x in footerTwo">{{x}}</td>
+				</tr>
+			</table>
+			<div class="footerSchoolLogo">
+				<img src="img/footer/schoolLog.png">
+			</div>
+			<div class="blankDiv"></div>
+		</div>
+		<script type="text/javascript" src="js/footer.js"></script>
+	</body>
+
+</html>

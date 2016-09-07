@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/ionicons.min.css" />
+		<link rel="stylesheet" href="css/person/person.css" />
+		<script type="text/javascript" src="js/angular.min.js"></script>
+	</head>
+
+	<body ng-app="person">
+		<div class="tutor" ng-controller="tutor">
+			<div class="tutorTitle">
+				导师 - 学生双选系统
+			</div>
+			<div class="navTutor">
+				<div class="stepName" ng-repeat="x in stepName">
+					{{x}}
+					<div class="stepNumber" mark={{$index}}>
+						{{stepNumber[$index]}}
+					</div>
+				</div>
+				<div class="fixedLine">
+				</div>
+				<div class="stepLine-{{$index}}" ng-repeat="x in stepName"></div>
+			</div>
+			<div class="tutorAvailable">
+				可选择的导师
+			</div>
+			<div class="shadow"></div>
+			<!--
+               下面部分是教师列表
+                -->
+			
+		</div>
+		<div class="teacherIndex">
+				<ul>
+					<li ng-repeat="x in teacherIndex">
+						<a href="#">{{x}}</a>
+					</li>
+				</ul>
+			</div>
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="tutorAvailable" id="top">
+			可选择的导师：一个学生只能选择两个导师，分别为第一志愿，第二志愿
+		</div>
+		<div class="shadow"></div>
+		<div class="teacherIndex">
+			<ul>
+				<li ng-repeat="x in teacherIndex" class="index" mark={{x}}>
+					{{x}}
+				</li>
+			</ul>
+		</div>
+		<div class="teacherList">
+			<div ng-repeat="x in teacherIndex" id="{{x}}">
+				{{x}}
+				<div class="teacherDetail">
+					<div class="teacherinfo-container">
+						<div class="teacherinfo-item" ng-repeat="x in selected">
+							<div class="img-block" style="background-image: url(img/tutor/chenshiyi1.jpg);"></div>
+							<h2>{{x}}</h2>
+							<h4>公共基础部</h4>
+							<h4>最多辅导13人</h4>
+							<h4>8182199@mail.sustc.edu.cn</h4>
+							<div class="btn-group">
+								<div class="click-shown">
+									<div class="my-btn">个人简介</div>
+									<div class="hidden-content">
+										<div class="triangle-left1"></div>
+										<div class="triangle-left2"></div>
+										<div class="content-panel-right">
+											<h3>个人简介</h3>
+											<p>sasdsddddddddddddsadsssssssssssdasdsasasasasd哈哈</p>
+										</div>
+									</div>
+								</div>
+								<!--<div class="click-shown">
+									<div class="my-btn">辅导学生</div>
+									<div class="hidden-content">
+										<div class="triangle-left1"></div>
+										<div class="triangle-left2"></div>
+										<div class="content-panel-right">
+											<h3>辅导学生</h3>
+											<p>sasdsddddddddddddsadsssssssssssdasdsasasasasd哈哈</p>
+										</div>
+									</div>
+								</div>-->
+								<div class="click-shown">
+									<div class="my-btn">选择志愿</div>
+									<div class="hidden-content-top">
+										<div class="triangle-down1"></div>
+										<div class="triangle-down2"></div>
+										<div class="content-panel-top">
+											<h3>选择志愿</h3>
+											<ul class="select-group">
+												<li class="first">第一志愿</li>
+												<li class="second">第二志愿</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="selectChart">
+			<span class="ion-ios-list"></span>
+			<div class="list">
+				<div class="cartTitle">志愿清单</div>
+				<div class="cartDetail">
+					<div class="cartSelected">
+						<span class="cartLeft">已选导师</span>
+						<span class="cartRight">删除导师</span>
+					</div>
+					<div class="cartList">
+						<div ng-repeat="x in department" class="cartList-{{$index+1}}">
+							asdasd<span class="ion-ios-close"></span>
+						</div>
+						<div class="confrimButton">
+							下一步
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

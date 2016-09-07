@@ -1,0 +1,42 @@
+@import "../default.scss";
+$headerBackgroundColor: #58453E;
+$fontSize: 19px;
+$footerWidth: 24%;
+$Color: #1D1614;
+$letterSpacing: 0.5px;
+.footerItems {
+    width: $cover;
+    background-color: $headerBackgroundColor;
+    height: $footerWidth;
+    color: $Color;
+    letter-spacing: $letterSpacing;
+    font-size: $fontSize;
+}
+.footerLogo {
+    margin: $footerWidth/7 0 $footerWidth/5 $footerWidth/5;
+    float: left;
+    display: inline;
+}
+.footerTable {
+    display: inline;
+    float: left;
+    max-width: $footerWidth*2.5;
+    margin: $footerWidth/13 0 $footerWidth/6 $footerWidth/8;
+    td{
+     cursor: pointer;   
+     width: $cover/25;
+    }
+}
+.footerSchoolLogo {
+    float: left;
+    display: inline;
+    img {
+         position: fixed;
+         right: 0;
+        max-width: $fontSize*7;
+        height:$fontSize*7;
+    }
+}
+.blankDiv{
+    clear: both;
+}

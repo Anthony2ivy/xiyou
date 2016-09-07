@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="teachers-3s">
+			<!--
+            	作者：625736835@qq.com
+            	时间：2016-08-20
+            	描述：审核中
+            -->
+			<div class="selectedInfo">
+				<div class="title-3">选择的导师为:</div>
+				<div class="selected-3" ng-repeat="x in selected">
+					第{{$index}}:&nbsp;&nbsp;{{x}}&nbsp;&nbsp;{{department[$index]}}
+				</div>
+				<div class="personalStatement-3">
+					学生个人简介：
+					<div class="personalStatement-3Detail">
+						lalalalala
+					</div>
+					<div class="teacherStatus">
+						<span class="ion-ios-information">&nbsp;等待审核中</span>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：625736835@qq.com
+            	时间：2016-08-20
+            	描述：审核完成
+            -->
+			<!--<div class="successSelected">
+				<div class="succeesInfo">
+					<span class="ion-ios-checkmark"></span>审核完成
+				</div>
+				<div class="showSuccessInfo">
+					<span class="teacherName">您的导师是:</span>&nbsp;陈十一
+				</div>
+
+			</div>-->
+	</body>
+
+</html>

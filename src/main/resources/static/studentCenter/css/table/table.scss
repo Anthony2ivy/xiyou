@@ -1,0 +1,14 @@
+@import "default.scss";
+$ApplyFormBackgroundColor : lightblue;
+$partOneBackgroundColor: yellow;
+$cover :100%;
+.applyForm{
+    background-color: $ApplyFormBackgroundColor;
+    width: $cover;
+    height: $cover;
+}
+.partOne{
+    background-color:$partOneBackgroundColor ;
+    width: $cover/2;
+    height: $cover/3;
+}

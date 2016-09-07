@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Student Center</title>
+		<link rel="stylesheet" href="/studentCenter/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/studentCenter/css/ionicons.min.css" />
+		<link rel="stylesheet" href="/studentCenter/css/person/z.css" />
+		<link rel="stylesheet" href="/studentCenter/css/person/person.css" />
+		<script type="text/javascript" src="/studentCenter/js/angular.min.js"></script>
+		<script type="text/javascript" src="/studentCenter/js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="/studentCenter/js/script.js"></script>
+		<script type="text/javascript" src="/studentCenter/js/z.js"></script>
+		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body ng-app="person">
+		<!-- 第一部分 导航栏-->
+		<!--<div ng-include="'login.html'"></div>-->
+		<div ng-controller="navLeft" ng-include="'templates/navLeft.html'"></div>
+		<!--<div ng-controller="content" ng-include="'notice.html'"></div>-->
+		<!--<div ng-include="'studentCenter/user.html'"></div>-->
+		<div ng-controller="tutor" ng-include="'teachers/teacher-nav.html'" class="teacher-nav"></div>
+		<div ng-controller="tutor"ng-include="'teachers/teachers.html'" class="teachers-1"></div>
+		<!--<div ng-controller="tutor" ng-include="'studentCenter/teachers/teachers-2.html'" class="teachers-2"></div>-->
+		<!--<div ng-controller="tutor" ng-include="'studentCenter/teachers/teachers-3.html'" class="teachers-3"></div>-->
+		<!--<div ng-include="'studentCenter/affair/navAffair.html'" ng-controller="affair"></div>-->
+		<!--<div ng-include="'studentCenter/help/navHelp.html'" ng-controller="help"></div>-->
+	</body>
+
+</html>

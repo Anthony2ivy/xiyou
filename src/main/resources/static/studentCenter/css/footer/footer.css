@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: Arial; }
+
+.footerItems {
+  width: 100%;
+  background-color: #58453E;
+  height: 24%;
+  color: #1D1614;
+  letter-spacing: 0.5px;
+  font-size: 19px; }
+
+.footerLogo {
+  margin: 3.42857% 0 4.8% 4.8%;
+  float: left;
+  display: inline; }
+
+.footerTable {
+  display: inline;
+  float: left;
+  max-width: 60%;
+  margin: 1.84615% 0 4% 3%; }
+  .footerTable td {
+    cursor: pointer;
+    width: 4%; }
+
+.footerSchoolLogo {
+  float: left;
+  display: inline; }
+  .footerSchoolLogo img {
+    position: fixed;
+    right: 0;
+    max-width: 133px;
+    height: 133px; }
+
+.blankDiv {
+  clear: both; }
+
+/*# sourceMappingURL=footer.css.map */

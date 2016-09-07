@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="daliyAffair">
+			<div class="dailyImg">
+				<img src="img/affair/daily.svg">
+			</div>
+			<div class="dailyList">
+				<div class="th">学生日常事务</div>
+				<table class="listTable">
+					<tr ng-repeat="x in daily">
+						<td mark={{$index+1}} class="dailyTd"><span class="zero">0</span><span>{{$index+1}}</span>&nbsp;&nbsp;{{x}}</td>
+					</tr>
+				</table>
+				<div class="fulllist" ng-click="fullList()">查看全部{{count}}条</div>
+			</div>
+			
+			<div class="dailyTutor">
+				<div class="dailyImg">
+					<img src="img/affair/daily.svg">
+				</div>
+				<div class="tutorDescription">
+					<div class="titleDescription">
+						导师模块
+					</div>
+					<div class="tutorLine">
+						导师双选系统
+					</div>
+					<div class="tutorTips">
+						学生只能选择所在书院导师，如有问题请移步<span class="ion-ios-help">帮助中心</span>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

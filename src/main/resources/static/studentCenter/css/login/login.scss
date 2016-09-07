@@ -1,0 +1,138 @@
+@import "../default.scss";
+$formBackgroundColor: rgb(201,192,187);
+$fontColor: #4D301D;
+$buttonColor: #FF5B5B;
+$radius: 2px;
+$min: 768px;
+$middle:992px;
+$max: 1200px;
+body {
+    background-image: url("../../img/login/login.png");
+    background-attachment: fixed;
+    background-size: $cover $cover;
+    background-repeat: no-repeat;
+    color: $fontColor;
+}
+.loginTop {
+    padding: $cover/40 0 0 $cover/45;
+    width: $cover;
+    .topRight {
+        text-align: right;
+    }
+}
+.loginMiddle {
+    padding: $cover/10 0 0;
+}
+.loginForm {
+    width: $cover;
+    height: $cover;
+    .stuLogin {
+        width: $cover/2;
+        height: $cover;
+        margin: $cover/25 0 0;
+        font-size: $radius*8; //      
+        text-align: center;
+        line-height: $radius*15;
+        border-radius: $radius;
+        background-color: $formBackgroundColor; //  width: $cover/20;
+        input {
+            width: $cover/1.3;
+            border-radius: $radius;
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px $formBackgroundColor inset;
+            border: none !important;
+        }
+        input:focus {
+            background-color: transparent;
+        }
+    }
+    button {
+        margin-top: $cover/18;
+        background-color: $buttonColor;
+        width: $cover/2;
+        border: none;
+        border-radius: $radius;
+        cursor: pointer;
+    }
+    button:hover {
+        box-shadow: 1px 1px 1px $formBackgroundColor;
+    }
+    button:focus {
+        box-shadow: 1px 1px 1px $formBackgroundColor;
+        outline: none;
+    }
+    button:active {
+        box-shadow: 1px 1px 1px $formBackgroundColor;
+
+    }
+}
+.copyright {
+    width: $cover;
+    padding: $cover/25 0 0 $cover/12;
+    text-align: center;
+    img {
+        min-height: $radius*15;
+    }
+}
+@media screen and(max-width:$min) {
+    .loginMiddle {
+        padding: $cover/3 0 0;
+    }
+    .logo-2 {
+        img {
+        width: $cover*1.3;
+        }
+    }
+    .midline{
+        margin-left: $cover/20;
+    }
+    .loginForm{
+        width: $cover;
+        .stuLogin{
+            width: $cover;
+        }
+        button{
+            width: $cover;
+        }
+    }
+    .copyright{
+        padding: $cover/25 0 0 $cover/8;
+    }
+}
+@media screen and (min-width:$min) and (max-width:$middle){
+     .loginMiddle {
+        padding: $cover/4 0 0 $cover/10;
+    }
+    .loginForm{
+        width: $cover;
+        .stuLogin{
+            width: $cover/1.2;
+        }
+        button{
+            width: $cover/1.2;
+        }
+    }
+}
+@media screen and (min-width:$middle) and (max-width:$max){
+     .loginMiddle {
+         margin-left: -1*$cover/10;
+        padding: $cover/4 0 0 0;
+    }
+    .loginForm{
+        width: $cover;
+        .stuLogin{
+            width: $cover/1.4;
+        }
+        button{
+            width: $cover/1.4;
+        }
+    }
+    .copyright{
+        padding: $cover/25 0 0 $cover/25;
+        
+    }
+}

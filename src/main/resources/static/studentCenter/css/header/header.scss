@@ -1,0 +1,81 @@
+@import "../default.scss";
+$headerBackgroundColor: #58453E;
+$fontColor: white;
+$fontSize: 19px;
+$fontWeight: lighter;
+$headerBoxShadow: 0 2px 6px 1px rgba(0,0,0,0.34);
+$logoSize: 20%;
+$pressBackgroundColor: #886659;
+.header {
+    margin: $zero;
+    padding: $zero;
+    width: $cover;
+    height: $cover/10;
+    box-shadow: $headerBoxShadow;
+    position: fixed;
+    left: $zero;
+    top: $zero;
+    z-index: 999;
+    background-color: $headerBackgroundColor;
+    color: $fontColor;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+.logo {
+    float: left;
+    width: $logoSize*1.25;
+    height: $cover;
+    img {
+        height: $cover;
+        width: $logoSize*2.5;
+        padding-left: $logoSize;
+    }
+}
+.middleItems {
+    display: inline-block;
+    float: left;
+    width: $logoSize*2.5;
+    height: $cover;
+    .tdButton {
+        float: left;
+        width: $cover/3;
+        line-height: $fontSize*2.2;
+        height: $cover;
+    }
+}
+.rightItems {
+    float: left;
+    width: $logoSize*1.25;
+    height: $cover;
+    img {
+        float: left;
+        width: $logoSize*2;
+        height: $cover;
+    }
+    td {
+        width: $cover/5;
+    }
+}
+@for $i from 1 to 4 {
+    .middleItemsContent-#{$i} {
+        cursor: pointer;
+        display: inline-block;
+        margin: $logoSize/4;
+        padding: 0 0 $logoSize/7 $logoSize/3;
+        width: $logoSize*2.8;
+        height: $cover/2;
+        border-radius: $fontSize;
+        img {
+            width: $fontSize;
+            height: $fontSize;
+        }
+    }
+}
+.pressLine {
+    width: 0;
+    height: 3px;
+    background-color: gold;
+    box-shadow: 1px 1px 1px darken(gold,20%);
+    position: absolute;
+    left:0;
+}

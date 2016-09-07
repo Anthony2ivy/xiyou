@@ -1,0 +1,807 @@
+@import "../default.scss";
+$navBackgroundColor: #2E190B;
+$navFontColor: #C5BCB5;
+$subBackgroundColor: white;
+$navHoverColor: #FF6600;
+$fontSize: 11px;
+$triangleSize: 10px;
+$toplineBackgroundColor: #A79D94;
+$forwardBgColor: #a79d94;
+$pressedBgColor: #6F6054;
+$listBannerColor: #E9E9E9;
+$buttonBgColor: white;
+$underLineColor: #979797;
+$selectedBgColor: #F2F2F2;
+$greenButton: #48CC4F;
+$step3Color: #545454;
+$step3Line: #D3D3D3;
+$successColor: #7ED321;
+$successBorder: #39A33F;
+$cardBgcolor: #F6F1F2;
+$bodyBgcolor: #F2F2F2;
+@mixin onlyWH($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin common($width, $height, $position, $z-index, $backgroudcolor:white, $color:$navFontColor, $text-align:center) {
+    width: $width;
+    height: $height;
+    position: $position;
+    z-index: $z-index;
+    color: $color;
+    text-align: $text-align;
+    background-color: $backgroudcolor;
+}
+@mixin cursors {
+    cursor: pointer;
+    list-style: none;
+}
+@mixin onlycolor($color, $backgroudcolor) {
+    color: $color;
+    background-color: $backgroudcolor;
+}
+body {
+    background-color: $bodyBgcolor;
+}
+.triangle {
+    @include onlyWH(0,0);
+    border-top: $triangleSize solid transparent;
+    border-right: $triangleSize*2 solid $subBackgroundColor;
+    border-bottom: $triangleSize solid transparent;
+    position: fixed;
+    z-index: 998;
+}
+.hideDiv {
+    @include cursors;
+    @include common($cover/8,$cover/2.5,fixed,997,$subBackgroundColor,$navBackgroundColor); //  position: absolute;
+    left: -500px;
+    top: 0;
+    padding: $cover/50 0 0;
+    border-radius: $cover/50;
+    box-shadow: 0 1px 15px 3px rgba(0,0,0,0.50); //      display: none;
+    .subItems {
+        width: $cover;
+        line-height: $fontSize*2.8;
+        span {
+            font-size: $fontSize*1.5;
+        }
+    }
+}
+.hideSubDive {
+    @include cursors;
+    @include common($cover/10,$cover/4,fixed,997,$subBackgroundColor,$navBackgroundColor);
+    border-radius: $cover/60;
+    box-shadow: 0 1px 15px 3px rgba(0,0,0,0.50);
+    top: -100px;
+    left: -500px;
+    padding: $cover/80 0;
+    .subSubItems {
+        width: $cover;
+        line-height: $fontSize*1.5;
+    }
+}
+.navLeft {
+    @include cursors;
+    @include common(80px,$cover,fixed,999,$navBackgroundColor,$navFontColor); //  width: $cover/12;
+    left: 0;
+    top: 0;
+    font-size: $fontSize;
+    li {
+        font-size: $fontSize*2;
+    }
+    .personIcons {
+        @include onlyWH($cover,$cover/10);
+        padding: $cover/5 0;
+        margin-bottom: $cover/3;
+        img {
+            width: $cover/1.8;
+        }
+    }
+    .navList {
+        @include onlyWH($cover,$cover);
+        .navItems {
+            display: inline-block;
+            padding: 0 $cover/4;
+            float: left;
+            width: $cover/2;
+            line-height: $fontSize*2;
+        }
+        .navItems:hover {
+            @include onlycolor($subBackgroundColor,$navHoverColor);
+        }
+        .navLabel {
+            float: left;
+            @include onlyWH($cover,$cover/10);
+            margin: $cover 0 0;
+            line-height: $fontSize*1.5;
+        }
+        .navLabel:hover {
+            @include onlycolor($subBackgroundColor,$navHoverColor);
+        }
+    }
+}
+/*! 现在是 content 页面*/
+.topLine {
+    @include common($cover,40px,fixed,3,$toplineBackgroundColor,white);
+    top: 0;
+    left: 0;
+    .forward {
+        @include common(20px,20px,fixed,2,$forwardBgColor,white);
+        cursor: pointer;
+        left: $cover/10;
+        top: 8px;
+        border: solid 1px $navBackgroundColor;
+        border-radius: 2px;
+        line-height: $fontSize*2;
+    }
+    .back {
+        @extend .forward;
+        left: $cover/8.25;
+        background-color: $pressedBgColor;
+    }
+    .transparentLine {
+        @include common($cover,4px,fixed,3,white);
+        top: 35px;
+    }
+    .line {
+        @include common($cover,4px,fixed,3,$navBackgroundColor);
+        top: 38px;
+    }
+}
+/*! 消息*/
+.notice {
+    @include cursors;
+    @include common($cover,$cover,fixed,2,white);
+    top: $cover/9;
+    .title {
+        @include common($cover,$cover/20,relative,2,white,$navBackgroundColor,left);
+        padding: $cover/25 0 0 $cover/8;
+        font-size: $fontSize*1.5;
+    }
+    .subTitle {
+        @include common($cover,$cover/20,relative,2,white,$navBackgroundColor,left);
+        padding: $cover/100 0 0 $cover/8;
+        font-size: $fontSize;
+        .subTitleContent {
+            padding: 0 $cover/100;
+            border-left: solid 1px $navFontColor;
+        }
+        .subTitleContent:hover {
+            font-weight: bold;
+        }
+        .subTitleContent:nth-child(1) {
+            padding: 0 $cover/100 0 0;
+            border-left: none;
+        }
+    }
+    .noticeList {
+        @include common($cover/1.2,$cover/1.5,relative,2,white,$navBackgroundColor,left);
+        font-size: $fontSize;
+        padding-left: $cover/8;
+        .noticeForm {
+            @include common($cover,$cover,relative,2,white,$navBackgroundColor,left);
+            .listBanner {
+                @include onlyWH($cover,$cover/15);
+                background-color: $listBannerColor;
+                .buttonDelete {
+                    display: inline-block;
+                    background-color: $buttonBgColor;
+                    border: solid 1px $underLineColor;
+                    @include onlyWH($cover/25,$cover/2);
+                    margin: $cover/150 0 0 $cover/120;
+                    text-align: center;
+                    border-radius: 1px;
+                }
+                .buttonRead {
+                    @extend .buttonDelete;
+                }
+            }
+            .checkboxContent {
+                padding: $cover/100 0 0;
+                @include onlyWH($cover,$cover/10);
+                border-bottom: solid 1px $underLineColor;
+                input {
+                    float: left;
+                    width: $cover/30;
+                }
+                .contentDiv {
+                    width: $cover/1.1;
+                    float: left;
+                }
+                .date {
+                    width: $cover/30;
+                    float: left;
+                }
+                .imgDiv {
+                    width: $cover*0.04;
+                    float: left;
+                }
+                .rightText {
+                    width: $cover*0.96;
+                    float: left;
+                    .textDiv {
+                        line-height: $fontSize*2;
+                        .textTitle {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*!导师双选系统 */
+.tutor {
+    @include common($cover,120px,fixed,2,white,$navBackgroundColor,left);
+    top: 42px; //改
+    overflow-y: scroll;
+    .tutorTitle {
+        @include common($cover,$cover/14,fixed,2,white,$navBackgroundColor,left);
+        padding: $cover/40 0 0 $cover/10;
+        font-size: $fontSize*1.5;
+        font-weight: bold;
+    }
+    .navTutor {
+        @include common($cover,$cover/16,fixed,2,white,$navBackgroundColor);
+        top: 110px;
+        .stepName {
+            @include common($cover/3,$cover,relative,3,transparent,$navBackgroundColor);
+            font-size: $fontSize*1.25;
+            line-height: $fontSize*2;
+            float: left;
+            @for $i from 0 to 3 {
+                .stepNumber-#{$i} {
+                    z-index: 4;
+                    cursor: pointer;
+                    @include onlyWH($fontSize*2,$fontSize*2);
+                    margin-left: $cover/2.1;
+                    border-radius: $fontSize*2;
+                    @include onlycolor(white,$listBannerColor);
+                }
+            }
+        }
+        .fixedLine {
+            @include common($cover,$cover/100,fixed,1,$listBannerColor);
+            top: 140px;
+        }
+        @for $i from 0 to 3 {
+            .stepLine-#{$i} {
+                @include common($cover/12,$cover/100,fixed,2,$listBannerColor);
+                top: 140px;
+            }
+        }
+        .stepLine-0 {
+            left: $cover/8;
+        }
+        .stepLine-1 {
+            left: $cover/2.18;
+        }
+        .stepLine-2 {
+            left: $cover/1.26;
+        }
+    }
+}
+.tutorAvailable {
+    @include common($cover,$cover/28,fixed,2,white,$navBackgroundColor);
+    top: 160px;
+    font-size: $fontSize*1.3;
+    font-weight: bold;
+}
+.shadow {
+    @include common($cover,$cover/60,fixed,2,#f2f2f2,$navBackgroundColor);
+    top: 180px;
+    background-image: linear-gradient(0deg, rgba(46,25,10,0.00) 0%, rgba(46,25,10,0.02) 53%, rgba(46,25,10,0.17) 100%);
+}
+.teacherIndex {
+    @include common(30px,auto,fixed,5,$listBannerColor,$navBackgroundColor);
+    right: 20px;
+    top: 200px;
+    border-radius: $fontSize/5;
+    font-size: $fontSize*1.2;
+    line-height: $fontSize*1.6;
+    cursor: pointer;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li:hover {
+            @include onlycolor(white,$navBackgroundColor);
+        }
+    }
+}
+.teacherList {
+    @include common($cover,$cover,relative,1,#f2f2f2,$toplineBackgroundColor,left);
+    padding-left: $cover/10;
+    margin-top: $cover/7;
+    @each $i in A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z {
+        ##{$i} {
+            @include onlyWH($cover/1.2,$cover);
+            margin-left: $cover/30;
+            padding-top: $cover/50;
+            font-size: $fontSize*3; //          
+            h2 {
+                font-size: $fontSize*2.3;
+            }
+            h3 {
+                font-size: $fontSize*1.7;
+            }
+            h4 {
+                font-size: $fontSize*1.5;
+                margin-bottom: 2%;
+            }
+            p {
+                font-size: $fontSize*1.2;
+            }
+        }
+    }
+    .teacherDetail {
+        padding-bottom: 20px;
+    }
+    .teacherDetail:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+//导师购物车
+.selectChart {
+    @include common($fontSize*4,$fontSize*4,fixed,997,$navBackgroundColor,white,center);
+    bottom: 20px;
+    right: 80px;
+    font-size: $fontSize*2.5;
+    line-height: $fontSize*4;
+    border-radius: $cover;
+    cursor: pointer;
+    overflow: visible;
+    &:hover {
+        background-color: lighten($navBackgroundColor,20%);
+    }
+    .list {
+        display: none;
+        @include common(250px,350px,fixed,5,white,$navBackgroundColor);
+        border-radius: $fontSize/2;
+        font-size: $fontSize*2;
+        line-height: $fontSize*6;
+        bottom: $cover/10;
+        right: $cover/11;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.60);
+        .cartTitle {
+            border-top-right-radius: $fontSize/3;
+            border-top-left-radius: $fontSize/3;
+            @include onlyWH($cover,$cover/5);
+            @include onlycolor(white,lighten($navBackgroundColor,10%));
+        }
+        .cartDetail {
+            @include onlyWH($cover,$cover*0.8);
+            font-size: $fontSize*1.6;
+            line-height: $fontSize*4.9;
+            background-color: $cardBgcolor;
+            .cartSelected {
+                @include onlyWH($cover,$cover*0.2);
+                background-color: white;
+                span {
+                    @include onlyWH($cover/2,$cover);
+                }
+                .cartLeft {
+                    padding-right: $cover/8;
+                    text-align: left;
+                }
+                .cartRight {
+                    padding-left: $cover/8;
+                    text-align: right;
+                }
+            }
+            .cartList {
+                @include onlyWH($cover,$cover*0.8);
+                border-bottom-left-radius: $fontSize/3;
+                border-bottom-right-radius: $fontSize/3;
+                @for $i from 1 to 3 {
+                    .cartList-#{$i} {
+                        @include onlyWH($cover*0.9,$cover*0.3);
+                        padding-left: $cover*0.1;
+                        text-align: left;
+                        margin-top: $cover/50;
+                        background-color: white;
+                        span {
+                            color: red;
+                            padding-left: $cover/2;
+                        }
+                    }
+                }
+                .confrimButton {
+                    @include onlyWH($cover/2,$cover*0.18);
+                    line-height: $fontSize*3.6;
+                    font-size: $fontSize*1.5;
+                    @include onlycolor(white,lighten($navBackgroundColor,10%));
+                    margin: $cover/15 $cover/4.2;
+                }
+            }
+        }
+    }
+}
+//已经选好的老师
+.teachers-2s {
+    @include common($cover/1.15,$cover,relative,1,$bodyBgcolor,$navBackgroundColor,left);
+    min-height: 450px;
+    margin: $cover/8 0 0 $cover/10;
+    .teacherSelected {
+        background-color: white;
+        @include onlyWH($cover,$cover/5);
+        min-height: 160px;
+        border-radius: $fontSize/3;
+        padding-bottom: 20px;
+        .title {
+            font-size: $fontSize*1.4;
+            font-weight: bold;
+            @include onlyWH($cover,$cover);
+            padding: $cover/60 0 0 $cover/50;
+        }
+        .Selected {
+            @include common($cover/1.05,$cover,relative,1,white,$navBackgroundColor,left);
+            min-height: 30px;
+            line-height: $fontSize*2.5;
+            margin: $cover/100 0 0 $cover/45;
+            border-bottom: solid 1px $underLineColor;
+        }
+    }
+    .studentInfo {
+        @include common($cover,$cover,relative,1,$bodyBgcolor,$navBackgroundColor,left);
+        min-height: 270px;
+        .stuInfo {
+            @include onlyWH($cover,$cover);
+            margin-top: 20px;
+            padding: 20px 0 $cover/60;
+        }
+        .personalStatement {
+            @include onlyWH($cover,$cover);
+            min-height: 200px;
+            textarea {
+                margin: 1px 0 0 2px;
+                @include onlyWH($cover/1.0091,$cover);
+                resize: none;
+                outline: none;
+                min-height: 200px;
+                border: solid $underLineColor 1px;
+                box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.29);
+            }
+        }
+        .buttonGroup {
+            @include common($cover,$cover,relative,1,wheat,$navBackgroundColor);
+            padding-left: $cover/1.18;
+            cursor: pointer;
+            .cancel {
+                margin-left: 5px;
+                line-height: $fontSize*2.5;
+                min-height: 25px;
+                width: 80px;
+                border-radius: $fontSize/2;
+                @include onlycolor(white,$underLineColor);
+                float: left;
+            }
+            .nextStep {
+                @extend .cancel;
+                @include onlycolor(white,$greenButton);
+            }
+        }
+    }
+}
+//step-3
+.selectedInfo {
+    @include common($cover/1.15,$cover,relative,1,$bodyBgcolor,$step3Color,left);
+    margin: $cover/7.2 0 0 $cover/10;
+    min-height: 450px;
+    font-weight: bold;
+    .title-3 {
+        margin-left: $cover/45;
+        //  @include common($cover,$cover/5,relative,1,white,$navBackgroundColor,left);
+    }
+    .selected-3 {
+        @include onlyWH($cover/1.05,$cover);
+        font-weight: 400;
+        line-height: $fontSize*1.8;
+        margin: $cover/150 0 0 $cover/45;
+    }
+    .personalStatement-3 {
+        @include onlyWH($cover/1.05,$cover);
+        margin: $cover/50 0 0 $cover/45;
+        padding: $cover/50 0 0;
+        border-top: solid 1px $step3Line;
+        min-height: 300px;
+        .personalStatement-3Detail {
+            font-weight: 100;
+            padding: $cover/50 0 0;
+        }
+        .teacherStatus {
+            text-align: center;
+            font-size: $fontSize*2.8;
+            margin-top: $cover/30;
+            font-weight: normal;
+        }
+    }
+}
+.successSelected {
+    @include common($cover/1.3,$cover,relative,1,$bodyBgcolor,$step3Color);
+    margin: $cover/7.2 0 0 $cover/7;
+    font-size: $fontSize*2.8;
+    font-weight: normal;
+    min-height: 450px;
+    .succeesInfo {
+        width: $cover;
+        min-height: 30px;
+        padding: 0 0 $cover/50;
+        border-bottom: solid 2px $step3Line;
+        span {
+            color: $successColor;
+        }
+    }
+    .showSuccessInfo {
+        width: $cover;
+        min-height: 30px;
+        text-align: left;
+        font-size: $fontSize*2;
+        padding: $cover/50 0 0;
+        span {
+            font-weight: bold;
+        }
+    }
+}
+/*! 个人事务*/
+.navAffair {
+    @include common($cover,150px,fixed,5,white,$navBackgroundColor);
+    top: 43px;
+    left: 0;
+    border-bottom: solid 2px $navBackgroundColor;
+    .affairTitle {
+        @include common($cover,25px,fixed,5,white,$navBackgroundColor,left);
+        top: 80px;
+        font-weight: bold;
+        font-size: $fontSize*2;
+        left: $cover/10;
+    }
+    @for $i from 1 to 3 {
+        .affairNum-#{$i} {
+            @include common($cover,10px,fixed,5,white,$underLineColor,left);
+            left: $cover/10;
+            font-size: $fontSize;
+        }
+        .affairNum-1 {
+            top: 115px;
+        }
+        .affairNum-2 {
+            top: 135px;
+        }
+    }
+    .navAffairDetails {
+        @include common($cover,30px,fixed,5,white,$underLineColor,left);
+        top: 162px;
+        @for $i from 0 to 4 {
+            .affairs-#{$i} {
+                @include common(152px,30px,fixed,5,$step3Line,#4A4A4A,center);
+                border: 1px #4A4A4A solid;
+                border-bottom: 0;
+                line-height: $fontSize*3;
+                cursor: pointer;
+            }
+        }
+        .affairs-0 {
+            left: 150px;
+        }
+        .affairs-1 {
+            left: 320px;
+        }
+        .affairs-2 {
+            left: 490px;
+        }
+        .colorChange {
+            @include onlycolor(white,$navBackgroundColor);
+        }
+    }
+}
+.affairContent {
+    @include common($cover/1.15,$cover,relative,1,white,$underLineColor,left);
+    margin: 200px 0 0 $cover/10;
+    .dailyImg {
+        @include common($cover*0.3,$cover/2,relative,5,white,$underLineColor,left);
+        float: left;
+        img {
+            padding: $cover/10 $cover/5;
+            width: $cover*0.6;
+        }
+    }
+    .dailyList {
+        @include common($cover*0.7,$cover/2,relative,1,white,black,left);
+        float: left;
+        .th {
+            font-size: $fontSize*1.8;
+            line-height: $fontSize*4;
+            font-weight: bold;
+        }
+        .listTable {
+            cursor: pointer;
+            @include onlyWH($cover/1.1,$cover);
+            line-height: $fontSize*2.5;
+            border-collapse: collapse;
+            tr:nth-child(even) {
+                @include onlycolor(black,lighten($navFontColor,18%));
+            }
+            tr:nth-child(odd) {
+                @include onlycolor(black,white);
+            }
+            tr {
+                border: solid 2px transparent;
+                display: block;
+                &:hover {
+                    border: solid 2px $underLineColor;
+                }
+            }
+        }
+        .fulllist {
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+    .dailyTutor {
+        margin-top: 50px;
+        @include common($cover,300px,relative,1,white,black,left);
+        float: left;
+        .dailyImg {
+            width: $cover*0.3;
+        }
+        .tutorDescription {
+            width: $cover*0.93;
+            .titleDescription {
+                font-size: $fontSize*1.8;
+                font-weight: bold;
+            }
+            .tutorLine {
+                font-size: $fontSize*1.6;
+                padding: 15px 0 10px;
+                border-bottom: solid 1px $underLineColor;
+            }
+            .tutorTips {
+                padding-top: 5px;
+                span {
+                    cursor: pointer;
+                    color: lightblue;
+                }
+            }
+        }
+    }
+}
+/*!
+ * 用户个人中心
+ * */
+.user {
+    @include common($cover/1.11,500px,relative,1,$bodyBgcolor,$navBackgroundColor,left);
+    margin: 50px 100px 0;
+}
+/*
+ * 帮助中心
+ */
+.navHelp {
+    cursor: pointer;
+    @include common(200px,$cover,fixed,3,$bodyBgcolor,$navBackgroundColor,left);
+    left: 80px;
+    top: 42px;
+    .navHelpTitle {
+        @include common(100px,30px,fixed,3,$bodyBgcolor,$navBackgroundColor,left);
+        top: 90px;
+        left: 120px;
+        font-size: $fontSize*2;
+        font-weight: bold;
+    }
+    .navHelpcol-1 {
+        @include common(100px,20px,fixed,3,$bodyBgcolor,darken($underLineColor,10%),left);
+        top: 150px;
+        left: 120px;
+        font-weight: normal;
+        font-size: $fontSize*1.4;
+    }
+    .navHelpcol-2 {
+        @include common(100px,20px,fixed,3,$bodyBgcolor,darken($underLineColor,10%),left);
+        top: 180px;
+        left: 120px;
+        font-weight: normal;
+        font-size: $fontSize*1.4;
+    }
+    .pressColor {
+        color: $navBackgroundColor;
+        font-weight: bold;
+    }
+    .navHelpRight {
+        @include common(5px,$cover,fixed,3,$bodyBgcolor,white);
+        left: 250px;
+        background-image: linear-gradient(89deg, rgba(255,255,255,0.00) 0%, rgba(46,25,10,0.09) 100%);
+        box-shadow: 1px 1px 2px darken($underLineColor,20%);
+    }
+}
+.helpContent {
+    @include common($cover/1.3,$cover,relative,2,$bodyBgcolor,$navBackgroundColor,left);
+    margin: 70px 0 0 280px;
+    .questionsName {
+        font-size: $fontSize*1.5;
+        font-weight: normal;
+        border-bottom: solid $underLineColor 1px;
+        margin: 20px 5px 0 10px;
+        .questionsNumber {
+            margin: 10px 0 0;
+            font-size: $fontSize*1.2;
+            color: darken($underLineColor,10%);
+        }
+    }
+    .contactTitle {
+        font-size: $fontSize*2;
+        font-weight: bold;
+        text-align: center;
+    }
+    .contactInfo {
+        @include onlyWH($cover/1.1,300px);
+        margin: 35px;
+        textarea {
+            @include onlyWH($cover,$cover);
+            color: $underLineColor;
+            resize: none;
+            outline: none;
+        }
+    }
+    .contactWay {
+        @include onlyWH($cover/1.1,40px);
+        margin: 0 0 0 35px;
+        input {
+            width: $cover/1.09;
+            border: solid 1px $underLineColor;
+        }
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset;
+            border: none !important;
+        }
+        input:focus {
+            outline: none;
+            border: solid 1px $navBackgroundColor;
+        }
+    }
+    .contactTips {
+        margin-left: 35px;
+        font-size: $fontSize*1.1;
+    }
+    .contactBottom{
+        @include common($cover,30px,relative,2,$bodyBgcolor,white,center);
+         .contactConfirm {
+        @include common(200px,30px,relative,2,$successColor,white,center);
+        cursor: pointer;
+        line-height: $fontSize*2.7;
+        border: solid 1px $successBorder;
+        font-size: $fontSize*1.5;
+        margin-left: $cover/2.45;
+    }
+    }
+   
+}
