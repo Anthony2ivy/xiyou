@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="hello" />
+        <module name="xiyou" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hello" target="1.8" />
+      <module name="xiyou" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
