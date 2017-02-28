@@ -2,12 +2,13 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
   <context id="MyBatisDemo">
-    <jdbcConnection connectionURL="jdbc:mysql://172.18.129.21:3306/xiyou" driverClass="com.mysql.jdbc.Driver" password="sustclzw" userId="lzw" />
+    <jdbcConnection connectionURL="jdbc:mysql://10.20.99.200:3306/duoshouapp" driverClass="com.mysql.jdbc.Driver" password="sustc2016" userId="campusbus" />
     <javaModelGenerator targetPackage="model" targetProject="src/main/java" />
     <sqlMapGenerator targetPackage="classpath:Mapper" targetProject="src/main/java" />
     <javaClientGenerator targetPackage="model.mapper" targetProject="src/main/java" type="XMLMAPPER" />
-    <table tableName="Student" domainObjectName="Student">
+    <table tableName="User" domainObjectName="User">
      <!--  <columnOverride column="???" property="???" /> -->
+      <property name="enableSelectByPrimaryKey" value="true"></property>
     </table>
   </context>
 </generatorConfiguration>
